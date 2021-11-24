@@ -1,5 +1,3 @@
-
-
 Piloter une installation Photovoltaïque Solaredge
 
 Message par jluc2808 » 22 Nov 2021 12:49
@@ -23,11 +21,10 @@ les commandes sont toutes sous la forme :
 la liste des commandes depuis eedomus et les données récupérées:
 - overview (production de l'année, production du mois, production du jour, production instantanée)
 - consommation_jour (production du jour, consommation du jour, autoconsommation du jour, achat du jour, vente du jour)
-- autoconsommation_jour (idem consommation jour)
 - consommation_instant (production du dernier quart d'heure, consommation du dernier quart d'heure, autoconsommation du dernier quart d'heure, achat du dernier quart d'heure, vente du dernier quart d'heure)
-- autoconsommation_instant (idem consommation instant)
 - info_mois (production du mois, consommation du mois, autoconsommation du mois, achat du mois, vente du mois)
 - info_an (production de l'année, consommation de l'année, autoconsommation de l'année, achat de l'année, vente de l'année)
+- details (les informations du site, nom, adresse, puissance crête, date installation)
 
 la liste des équipements: 
 - production instantanée Wh
@@ -51,5 +48,9 @@ la liste des équipements:
 - heure de dernière interrogation
 - dernière interrogation production (agrégat des données sous forme texte)
 - dernière interrogation consommation (agrégat des données sous forme texte)
+- nom du site 
+- date d'installation 
+- puissance crête
+- adresse du site 
 
 lien vers le forum eedomus: https://forum.eedomus.com/viewtopic.php?f=12&t=11078
