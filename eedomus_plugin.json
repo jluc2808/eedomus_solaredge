@@ -3,9 +3,9 @@
     "name_fr": "Photovoltaique Solaredge",
     "name_en": "Photovoltaic Solaredge",
     "icon": "Solaredge_icon.png",
-    "version": "2.0",
+    "version": "2.3",
     "creation_date": "2021-22-11",
-    "modification_date": "2022-20-11",
+    "modification_date": "2022-23-11",
     "author": "<a href='https://github.com/jluc2808' target='_blank'>jluc2808</a>",
     "description_fr": "Piloter et connaitre l'état de l'installation Photovoltaïque <em>Solaredge</em>",
     "description_en": "Operating and know the state of photovoltaic installation  <em>Solaredge</em>",
@@ -404,7 +404,7 @@
 			"type": "http",
             "name_fr": "solaredge - % autousage an -",
             "icon": "Solaredge_icon.png",
-            "utilisation_id": "26",
+            "utilisation_id": "35",
             "parameters": {
                 "value_type": "String",
                 "ignore_errors": 3,
@@ -425,7 +425,7 @@
 			"type": "http",
             "name_fr": "solaredge - achat/vente jour -",
             "icon": "Solaredge_icon.png",
-            "utilisation_id": "26",
+            "utilisation_id": "35",
             "parameters": {
                 "value_type": "String",
                 "ignore_errors": 3,
@@ -446,7 +446,7 @@
 			"type": "http",
             "name_fr": "solaredge - dernière interrogation conso -",
             "icon": "Solaredge_icon.png",
-            "utilisation_id": "26",
+            "utilisation_id": "35",
             "parameters": {
                 "value_type": "String",
                 "ignore_errors": 3,
@@ -467,7 +467,7 @@
 			"type": "http",
             "name_fr": "solaredge - dernière interrogation prod -",
             "icon": "Solaredge_icon.png",
-            "utilisation_id": "26",
+            "utilisation_id": "35",
             "parameters": {
                 "value_type": "String",
                 "ignore_errors": 3,
@@ -488,7 +488,7 @@
 			"type": "http",
             "name_fr": "solaredge - heure dernière interrogation prod -",
             "icon": "Solaredge_icon.png",
-            "utilisation_id": "26",
+            "utilisation_id": "35",
             "parameters": {
                 "value_type": "String",
                 "ignore_errors": 3,
@@ -498,7 +498,91 @@
 				"RAW_URL": "http://localhost/script/?exec=solaredge.php&function=overview&site=[VAR1]&api_key=[VAR2]",
 				"RAW_XPATH": "substring(//lastUpdateTime,1,16)",
 				"POLLING": 15		
-            }         
+            }
+		},
+		{
+            "device_id": "solaredge_adresse_du_site",
+            "parent_id": "solaredge_production_instantanée",
+			"create": 1,
+			"enable": 1,
+            "module_id": "51",
+			"type": "http",
+            "name_fr": "solaredge - adresse du site -",
+            "icon": "Solaredge_icon.png",
+            "utilisation_id": "35",
+            "parameters": {
+                "value_type": "String",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.SolaredgeId",
+                "VAR2": "plugin.parameters.SolaredgeKey",
+                "VAR3": "",
+				"RAW_URL": "http://localhost/script/?exec=solaredge.php&function=details&site=[VAR1]&api_key=[VAR2]",
+				"RAW_XPATH": "concat(//address, ' ', //zip, ' ', //city)",
+				"POLLING": 15		
+            }
+		}, 
+		{
+            "device_id": "solaredge_date_installation_du_site",
+            "parent_id": "solaredge_production_instantanée",
+			"create": 1,
+			"enable": 1,
+            "module_id": "51",
+			"type": "http",
+            "name_fr": "solaredge - date installation du site -",
+            "icon": "Solaredge_icon.png",
+            "utilisation_id": "35",
+            "parameters": {
+                "value_type": "String",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.SolaredgeId",
+                "VAR2": "plugin.parameters.SolaredgeKey",
+                "VAR3": "",
+				"RAW_URL": "http://localhost/script/?exec=solaredge.php&function=details&site=[VAR1]&api_key=[VAR2]",
+				"RAW_XPATH": "concat(substring(//installationDate,9,2), '/', substring(//installationDate,6,2), '/', substring(//installationDate,1,4))",
+				"POLLING": 15		
+            }
+		},
+		{
+            "device_id": "solaredge_nom_du_site",
+            "parent_id": "solaredge_production_instantanée",
+			"create": 1,
+			"enable": 1,
+            "module_id": "51",
+			"type": "http",
+            "name_fr": "solaredge - nom du site -",
+            "icon": "Solaredge_icon.png",
+            "utilisation_id": "35",
+            "parameters": {
+                "value_type": "String",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.SolaredgeId",
+                "VAR2": "plugin.parameters.SolaredgeKey",
+                "VAR3": "",
+				"RAW_URL": "http://localhost/script/?exec=solaredge.php&function=details&site=[VAR1]&api_key=[VAR2]",
+				"RAW_XPATH": "//name",
+				"POLLING": 15		
+            }
+		},
+		{
+            "device_id": "solaredge_puissance_crête_du_site",
+            "parent_id": "solaredge_production_instantanée",
+			"create": 1,
+			"enable": 1,
+            "module_id": "51",
+			"type": "http",
+            "name_fr": "solaredge - puissance crête du site -",
+            "icon": "Solaredge_icon.png",
+            "utilisation_id": "35",
+            "parameters": {
+                "value_type": "String",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.SolaredgeId",
+                "VAR2": "plugin.parameters.SolaredgeKey",
+                "VAR3": "",
+				"RAW_URL": "http://localhost/script/?exec=solaredge.php&function=details&site=[VAR1]&api_key=[VAR2]",
+				"RAW_XPATH": "//peakPower",
+				"POLLING": 15		
+            }
         }
     ]
 }
