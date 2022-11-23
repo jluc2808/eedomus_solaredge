@@ -1,6 +1,6 @@
 Piloter une installation Photovoltaïque Solaredge
 
-version 2.1 du 20 Nov 2022 
+version 2.3 du 23 Nov 2022 
 
 Objectif: utiliser l'API Solaredge documentée ici: https://www.solaredge.com/sites/default/files/se_monitoring_api.pdf
 sous la forme de plugin pour eedomus.
